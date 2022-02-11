@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Sliding Photo Gallery</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap" rel="stylesheet"> 
+    <link href="styles/coolstyles.css" rel="stylesheet" >
+</head>
+
+<body>
+<div id="container">
+	<header>
+    	<h1>Pure CSS Slider</h1>
+    </header>     
+    <main id="slider">
+        <input type="radio" name="sliders" id="slide1" checked="checked" >
+        <input type="radio" name="sliders" id="slide2" >
+        <input type="radio" name="sliders" id="slide3" >
+        <div id="slideholder">
+            <div class="imgslide">
+                <img src="images/giraffe.png" alt="giraffe">
+            </div>
+            <div class="imgslide">
+                <img src="images/lion.png" alt="lion">
+            </div>
+            <div class="imgslide">
+                <img src="images/zebra.png" alt="zebra">
+            </div>                   
+        </div>
+        <label for="slide1">Giraffe</label>
+        <label for="slide2">Lion</label>
+        <label for="slide3">Zebra</label>
+    </main>
+    <footer>
+    	<p>Scary Stuff &copy Scary People</p>
+    </footer>
+</div>
+</body>
+</html>
