@@ -97,6 +97,35 @@ footer p{
 	background-size:100% auto;
 	text-align:center;
 }
+/* this is using two properties to make the label styled when its radio button is selected:
+the "checked" pseudo class looks to see a form element like checkbox or radio button is checked
+the sibling selecter (~) will style an element if it has the first element before it */
+#slide1:checked ~ label:nth-of-type(1){background: hsla(101, 100%, 50%, 1.00); font-weight: bold;}
+#slide2:checked ~ label:nth-of-type(2){background: hsla(101, 100%, 50%, 1.00); font-weight: bold;}
+#slide3:checked ~ label:nth-of-type(3){background: hsla(101, 100%, 50%, 1.00); font-weight: bold;}
+/* the if we hide the radio buttons, it looks like the labels are becoming selected and 
+unselected alone when you click on them */
+input{
+	display: none;
+}
+/* this will lengthen the div holding */
+#slideholder{
+	width: 1500px;
+	height: 300px;
+	padding-top: 20px;
+}
+
+/* this just makes the images sit next to each other*/
+.imgslide{
+	width: 500px;
+	height: 300px;
+	float: left;
+}
+
+.imgslide img{
+	margin-top: 125px;
+}
+
 
 /******************************************
 		Labels
@@ -111,4 +140,41 @@ label{
 	background:hsla(101,100%,80%,1.00);
 	font-size:24px;
 	border-radius:10px;
+
+	/* add a transition so that any time there's a change to this element, it animates */
+	transition-property:all;	
+	transition-duration: 0.5s; 
+	/* if you want to do compound transitions, where you transition different properties with
+	different timings, you use the transition shorthand
+	the order of the transition property is: property, duration, function, delay 
+	transition: background 0.5s, border-radius 2s, font-size 0.5s; */
+}
+
+label:hover{
+	background: hsla(101,100%, 40%, 1.00);
+	/*font-size: 36px;
+	border-radius: 25px;*/
+}
+
+/* playing with transforms... */
+.shapes{
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.shape1{
+	width: 60px;
+	height: 60px;
+	background-color: lightblue;
+}
+
+.shape1:nth-child(2){
+	/* use the transform property to add a rotation to this element */
+	transform: rotate(45deg);
+}
+
+/* use the transform property to add a scale to this element */
+.shape:nth-child(3){
+	transform: scale(0.5);
+	/* for scale: 1 is the default size */
 }
